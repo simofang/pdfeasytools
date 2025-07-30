@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDFEasyTools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>PDFEasyTools</h1>
+        <div class="adsense-banner">[AdSense Banner Ad]</div>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('merge_pdfs') }}">Merge</a> |
+            <a href="{{ url_for('split_pdf') }}">Split</a> |
+            <a href="{{ url_for('compress_pdf') }}">Compress</a> |
+            <a href="{{ url_for('convert_pdf') }}">Convert</a>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 PDFEasyTools</p>
+        <div class="adsense-footer">[AdSense Footer Ad]</div>
+    </footer>
+</body>
+</html>

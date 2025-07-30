@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Welcome to PDFEasyTools</h2>
+  <p>All-in-one PDF tools — fast, free, and secure.</p>
+  <ul>
+    <li><a href="{{ url_for('merge_pdfs') }}">Merge PDFs</a></li>
+    <li><a href="{{ url_for('split_pdf') }}">Split PDFs</a></li>
+    <li><a href="{{ url_for('compress_pdf') }}">Compress PDFs</a></li>
+    <li><a href="{{ url_for('convert_pdf') }}">Convert PDF to Word</a></li>
+  </ul>
+{% endblock %}
